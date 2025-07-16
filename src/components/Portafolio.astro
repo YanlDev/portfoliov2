@@ -1,33 +1,465 @@
 ---
-
+import logoAstro from "../icons/logo-astro.png";
+import logoGit from "../icons/logo-git.png";
+import logoJs from "../icons/logo-js.png";
+import logoLaravel from "../icons/logo-laravel.png";
+import logoPhp from "../icons/logo-php.png";
+import logoReact from "../icons/logo-react.png";
+import logoTailwind from "../icons/logo-tailwind.png";
+import logoPython from "../icons/logo-python.png";
 ---
 
-<main class="container flex gap-2 mx-auto">
-  <section class="flex-1">
+<main
+  class="container flex flex-col lg:flex-row gap-8 mx-auto max-w-7xl min-h-screen font-inter px-4 py-8 lg:py-0"
+>
+  <!-- Sidebar fijo -->
+  <section
+    class="w-full lg:w-2/5 flex flex-col justify-center lg:h-screen lg:sticky lg:top-0 space-y-6 lg:space-y-8"
+  >
     <div>
-      <h1>Milder Yaniv Carreón Chambi</h1>
+      <h1 class="text-4xl lg:text-6xl font-bold tracking-tight leading-tight">
+        Milder Carreón
+      </h1>
+      <h2 class="text-lg lg:text-xl text-gray-600 mt-2 tracking-wide">
+        Desarrollador FullStack | Ingeniero Industrial
+      </h2>
     </div>
-    <nav>
-      <ul>
-        <li>Sobre mí</li>
-        <li>Experiencia</li>
-        <li>Proyectos</li>
+    <nav class="mt-6 lg:mt-8">
+      <ul class="space-y-3 lg:space-y-2" id="nav-menu">
+        <li>
+          <a
+            href="#about-me"
+            class="nav-link hover:text-gray-600 transition-all duration-300 ease-in-out text-base lg:text-lg tracking-wide"
+            data-section="about-me">Sobre mí</a
+          >
+        </li>
+        <li>
+          <a
+            href="#experience"
+            class="nav-link hover:text-gray-600 transition-all duration-300 ease-in-out text-base lg:text-lg tracking-wide"
+            data-section="experience">Experiencia</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projects"
+            class="nav-link hover:text-gray-600 transition-all duration-300 ease-in-out text-base lg:text-lg tracking-wide"
+            data-section="projects">Proyectos</a
+          >
+        </li>
       </ul>
     </nav>
-    <div>
-      <a href="#">Github</a>
-      <a href="#">Linkedn</a>
-      <a href="#">Mail</a>
+    <div class="mt-6 lg:mt-8 flex gap-4">
+      <a
+        href="#"
+        class="text-xl lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
+      >
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a
+        href="#"
+        class="text-xl lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
+      >
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a
+        href="#"
+        class="text-xl lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
+      >
+        <i class="fa-solid fa-envelope"></i>
+      </a>
     </div>
   </section>
-  <section class="flex-1">
-    <div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae cupiditate
-        laudantium hic saepe asperiores soluta eligendi, molestias blanditiis
-        nostrum. Ipsam explicabo quo doloremque dolore perferendis molestias
-        pariatur velit quas officia!
-      </p>
+
+  <!-- Contenido principal con scroll snap -->
+  <section
+    class="w-full lg:w-3/5 lg:h-screen lg:overflow-y-auto snap-y snap-mandatory scroll-smooth"
+    id="main-content"
+  >
+    <!-- Sección Sobre mí -->
+    <div
+      id="about-me"
+      class="min-h-screen lg:h-screen flex items-center snap-start px-4 lg:px-6 py-8 lg:py-0"
+    >
+      <div class="space-y-6 w-full">
+        <p class="tracking-normal text-base lg:text-lg leading-relaxed">
+          Soy una persona apasionada por la tecnología y el aprendizaje
+          constante. Me gusta crear software enfocado en facilitar flujos de
+          trabajo y desarrollar soluciones que resuelvan problemas reales. Mi
+          background como ingeniero industrial me permite pensar en procesos,
+          eficiencia y optimización, habilidades que van de la mano con el
+          desarrollo de software.
+        </p>
+        <p class="tracking-normal text-base lg:text-lg leading-relaxed">
+          Mi curiosidad por entender cómo funciona la tecnología me llevó al
+          desarrollo de software. Comencé con Java y evolucioné hacia un stack
+          diverso que incluye Python, JavaScript (React, Astro) y PHP (Laravel),
+          aprendiendo tanto de Frontend como Backend para crear soluciones
+          reales en empresas y proyectos freelance.
+        </p>
+        <p class="tracking-normal text-base lg:text-lg leading-relaxed">
+          Actualmente busco mi primera oportunidad formal en el mundo tech,
+          donde pueda colaborar en la creación de software que genere impacto
+          real.
+        </p>
+
+        <div class="pt-8">
+          <h4 class="font-semibold mb-6 text-lg lg:text-xl tracking-wide">
+            Mi Stack:
+          </h4>
+          <div class="flex flex-wrap gap-4 lg:gap-8">
+            <figure class="flex flex-col items-center group cursor-pointer">
+              <img
+                src={logoReact.src}
+                alt="React"
+                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
+              />
+              <figcaption
+                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
+              >
+                React
+              </figcaption>
+            </figure>
+
+            <figure class="flex flex-col items-center group cursor-pointer">
+              <img
+                src={logoJs.src}
+                alt="JavaScript"
+                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
+              />
+              <figcaption
+                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
+              >
+                JavaScript
+              </figcaption>
+            </figure>
+
+            <figure class="flex flex-col items-center group cursor-pointer">
+              <img
+                src={logoAstro.src}
+                alt="Astro"
+                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
+              />
+              <figcaption
+                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
+              >
+                Astro
+              </figcaption>
+            </figure>
+
+            <figure class="flex flex-col items-center group cursor-pointer">
+              <img
+                src={logoTailwind.src}
+                alt="TailwindCSS"
+                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
+              />
+              <figcaption
+                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
+              >
+                Tailwind
+              </figcaption>
+            </figure>
+
+            <figure class="flex flex-col items-center group cursor-pointer">
+              <img
+                src={logoLaravel.src}
+                alt="Laravel"
+                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
+              />
+              <figcaption
+                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
+              >
+                Laravel
+              </figcaption>
+            </figure>
+
+            <figure class="flex flex-col items-center group cursor-pointer">
+              <img
+                src={logoPhp.src}
+                alt="PHP"
+                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
+              />
+              <figcaption
+                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
+              >
+                PHP
+              </figcaption>
+            </figure>
+
+            <figure class="flex flex-col items-center group cursor-pointer">
+              <img
+                src={logoPython.src}
+                alt="Python"
+                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
+              />
+              <figcaption
+                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
+              >
+                Python
+              </figcaption>
+            </figure>
+
+            <figure class="flex flex-col items-center group cursor-pointer">
+              <img
+                src={logoGit.src}
+                alt="Git"
+                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
+              />
+              <figcaption
+                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
+              >
+                Git
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Sección Experiencia -->
+    <section
+      id="experience"
+      class="min-h-screen lg:h-screen flex flex-col justify-center snap-start px-4 lg:px-6 py-8 lg:py-0"
+    >
+      <div class="space-y-12 w-full">
+        <h3 class="text-2xl lg:text-3xl font-semibold mb-8 tracking-wide">
+          Experiencia
+        </h3>
+
+        <!-- Delta Consultores -->
+        <div class="space-y-4 mb-8">
+          <div>
+            <h4 class="text-lg lg:text-xl font-medium tracking-wide">
+              Desarrollador Full Stack | Delta Consultores
+            </h4>
+            <p class="text-gray-600 text-sm">jun. 2025 — presente</p>
+          </div>
+          <p
+            class="text-gray-800 leading-relaxed tracking-normal text-sm lg:text-base"
+          >
+            Desarrollo y mantenimiento de plataforma web para servicios de asesoría académica y tesis. Implementación de sistema de gestión de proyectos académicos, integración con Turnitin para verificación de originalidad, y desarrollo de dashboard administrativo para seguimiento de clientes.
+          </p>
+          <div class="flex flex-wrap gap-3 mt-4">
+            <span class="bg-black text-white px-3 py-1 rounded-md text-xs"
+              >Astro</span
+            >
+            <span class="bg-black text-white px-3 py-1 rounded-md text-xs"
+              >JavaScript</span
+            >
+            <span class="bg-black text-white px-3 py-1 rounded-md text-xs"
+              >Tailwind CSS</span
+            >
+            <span class="bg-black text-white px-3 py-1 rounded-md text-xs"
+              >Python</span
+            >
+          </div>
+        </div>
+
+        <!-- Proyectos Independientes -->
+        <div class="space-y-4 mb-8">
+          <div>
+            <h4 class="text-lg lg:text-xl font-medium tracking-wide">
+              Desarrollador de Software | Freelance
+            </h4>
+            <p class="text-gray-600 text-sm">ene. 2023 — presente</p>
+          </div>
+          <p
+            class="text-gray-800 leading-relaxed tracking-normal text-sm lg:text-base"
+          >
+            Desarrollo de aplicaciones especializadas para análisis académico y empresarial. Creación de calculadoras estadísticas (V-Aiken, Cronbach), herramientas de construcción (cálculo de muros y tarrajeo), sistemas de e-commerce y aplicaciones de traducción automática de video.
+          </p>
+          <div class="flex flex-wrap gap-3 mt-4">
+            <span class="bg-black text-white px-3 py-1 rounded-md text-xs"
+              >Laravel</span
+            >
+            <span class="bg-black text-white px-3 py-1 rounded-md text-xs"
+              >PHP</span
+            >
+            <span class="bg-black text-white px-3 py-1 rounded-md text-xs"
+              >Python</span
+            >
+            <span class="bg-black text-white px-3 py-1 rounded-md text-xs"
+              >React</span
+            >
+            <span class="bg-black text-white px-3 py-1 rounded-md text-xs"
+              >Java</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section
+      id="projects"
+      class="min-h-screen lg:h-screen flex flex-col justify-center snap-start px-4 lg:px-6 py-8 lg:py-0"
+    >
+      <div class="space-y-12 w-full">
+        <h3 class="text-2xl lg:text-3xl font-semibold mb-8 tracking-wide">
+          Proyectos
+        </h3>
+        <p class="text-gray-600 text-base lg:text-lg tracking-normal">
+          Próximamente...
+        </p>
+      </div>
+    </section>
   </section>
 </main>
+
+<style>
+  /* Estilo para navegación activa */
+  .nav-link {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .nav-link.active {
+    font-weight: 600;
+    color: #000;
+    transform: translateX(4px);
+  }
+
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  /* Scroll snap */
+  .snap-y {
+    scroll-snap-type: y mandatory;
+  }
+
+  .snap-start {
+    scroll-snap-align: start;
+  }
+
+  /* Scroll suave */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Mejoras de performance */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Optimización para móvil */
+  @media (max-width: 1024px) {
+    #main-content {
+      scroll-snap-type: none;
+      overflow-y: visible;
+      height: auto;
+    }
+
+    .snap-start {
+      scroll-snap-align: none;
+    }
+  }
+
+  /* Ocultar scrollbar personalizada */
+  #main-content {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  #main-content::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section[id], div[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const scrollContainer = document.getElementById("main-content");
+
+    // Marcar la primera sección como activa al cargar
+    navLinks[0].classList.add("active");
+
+    // Observer para detectar sección visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+            // Remover active de todos los links
+            navLinks.forEach((link) => link.classList.remove("active"));
+
+            // Agregar active al link correspondiente
+            const activeLink = document.querySelector(
+              `[data-section="${entry.target.id}"]`
+            );
+            if (activeLink) {
+              activeLink.classList.add("active");
+            }
+          }
+        });
+      },
+      {
+        root: scrollContainer,
+        threshold: [0.3, 0.5, 0.7],
+        rootMargin: "-20% 0px -20% 0px",
+      }
+    );
+
+    // Observar todas las secciones
+    sections.forEach((section) => observer.observe(section));
+
+    // Scroll suave al hacer click en navegación
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute("data-section");
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+          // Marcar inmediatamente como activo para mejor UX
+          navLinks.forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+
+          targetSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    });
+
+    // Mejorar la experiencia en móvil
+    let isScrolling = false;
+
+    scrollContainer.addEventListener(
+      "scroll",
+      () => {
+        if (!isScrolling) {
+          window.requestAnimationFrame(() => {
+            isScrolling = false;
+          });
+          isScrolling = true;
+        }
+      },
+      { passive: true }
+    );
+  });
+</script>
