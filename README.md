@@ -1,52 +1,74 @@
-# Astro Starter Kit: Basics
+# Portfolio - Milder Carreón
 
-```sh
-npm create astro@latest -- --template basics
+Sitio web de portafolio personal que muestra mi experiencia profesional como Desarrollador Full Stack e Ingeniero Industrial.
+
+## Acerca del Proyecto
+
+Este portafolio presenta mis habilidades técnicas, experiencia profesional y proyectos. Construido con tecnologías web modernas para demostrar competencia en desarrollo full-stack.
+
+## Tecnologías Utilizadas
+
+- **Astro** - Generador de sitios estáticos para rendimiento óptimo
+- **Tailwind CSS v4** - Framework CSS utility-first
+- **TypeScript** - JavaScript con tipado estático
+- **Font Awesome** - Librería de iconos
+
+## Características
+
+- Diseño responsive con navegación lateral
+- Navegación suave entre secciones
+- Showcase interactivo de tecnologías
+- Timeline de experiencia profesional
+- Muestra de proyectos
+
+## Desarrollo
+
+### Requisitos Previos
+- Node.js (v16 o superior)
+- npm
+
+### Instalación
+
+```bash
+npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+### Servidor de Desarrollo
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```bash
+npm run dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Visita `http://localhost:4321` para ver el portafolio.
 
-## 🧞 Commands
+### Compilar para Producción
 
-All commands are run from the root of the project, from a terminal:
+```bash
+npm run build
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+La compilación de producción se generará en el directorio `./dist/`.
 
-## 👀 Want to learn more?
+### Vista Previa de Producción
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+npm run preview
+```
+
+## Estructura del Proyecto
+
+```
+src/
+├── components/          # Componentes Astro reutilizables
+│   └── Portafolio.astro # Componente principal del portafolio
+├── layouts/            # Layouts base
+│   └── Layout.astro    # Layout HTML con meta tags
+├── pages/              # Páginas basadas en rutas
+│   └── index.astro     # Punto de entrada
+├── styles/             # CSS global y configuración Tailwind
+└── icons/              # Logos de tecnologías
+```
+
+## Contacto
+
+No dudes en contactarme para oportunidades de colaboración o preguntas sobre los proyectos mostrados.
