@@ -1,12 +1,4 @@
 ---
-import logoAstro from "../icons/logo-astro.png";
-import logoGit from "../icons/logo-git.png";
-import logoJs from "../icons/logo-js.png";
-import logoLaravel from "../icons/logo-laravel.png";
-import logoPhp from "../icons/logo-php.png";
-import logoReact from "../icons/logo-react.png";
-import logoTailwind from "../icons/logo-tailwind.png";
-import logoPython from "../icons/logo-python.png";
 import astroWebImg from "../img-webs/astro-web.png";
 ---
 
@@ -52,19 +44,22 @@ import astroWebImg from "../img-webs/astro-web.png";
     </nav>
     <div class="mt-4 lg:mt-8 flex gap-4 justify-center lg:justify-start">
       <a
-        href="#"
+        href="https://github.com/YanlDev"
+        target="_blank"
         class="text-lg lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
       >
         <i class="fa-brands fa-github"></i>
       </a>
       <a
-        href="#"
+        href="https://www.linkedin.com/in/yaniv-carreon/"
+        target="_blank"
         class="text-lg lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
       >
         <i class="fa-brands fa-linkedin"></i>
       </a>
       <a
         href="#"
+        target="_blank"
         class="text-lg lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
       >
         <i class="fa-solid fa-envelope"></i>
@@ -74,19 +69,19 @@ import astroWebImg from "../img-webs/astro-web.png";
 
   <!-- Contenido principal con scroll snap -->
   <section
-    class="w-full lg:w-3/5 lg:h-screen lg:overflow-y-auto snap-y snap-mandatory scroll-smooth relative"
+    class="w-full lg:w-3/5 lg:h-screen lg:overflow-y-auto lg:snap-y lg:snap-mandatory scroll-smooth relative"
     id="main-content"
   >
     <!-- Sección Sobre mí -->
     <div
       id="about-me"
-      class="min-h-screen lg:h-screen flex flex-col lg:items-center snap-start px-4 lg:px-6 py-8 lg:py-0"
+      class="lg:min-h-screen lg:h-screen flex flex-col lg:justify-center lg:snap-start px-4 lg:px-6 py-8 lg:py-0"
     >
       <!-- Título de sección (solo móvil) -->
       <div class="sticky top-0 bg-white z-10 py-4 mb-4 lg:hidden border-b border-gray-200">
-        <h2 class="text-2xl font-bold tracking-wide text-gray-900">Sobre mí</h2>
+        <h2 class="text-xl font-bold tracking-wide text-gray-900">Sobre mí</h2>
       </div>
-      <div class="space-y-6 w-full p-6 lg:p-0">
+      <div class="space-y-6 w-full lg:p-6">
         <p class="tracking-normal text-base md:text-md leading-relaxed">
           Soy una persona apasionada por la tecnología y el aprendizaje constante. Me gusta crear software enfocado en facilitar flujos de trabajo y desarrollar soluciones que resuelvan problemas reales. Mi background como ingeniero industrial me permite pensar en procesos, eficiencia y optimización, habilidades que van de la mano con el desarrollo de software.
         </p>
@@ -97,138 +92,28 @@ import astroWebImg from "../img-webs/astro-web.png";
           Actualmente busco mi primera oportunidad formal en el mundo tech, donde pueda colaborar en la creación de software que genere impacto real.
         </p>
 
-        <div class="pt-8">
-          <h4 class="font-semibold mb-6 text-lg lg:text-xl tracking-wide">
-            Mi Stack:
-          </h4>
-          <div class="flex flex-wrap gap-4 lg:gap-8">
-            <figure class="flex flex-col items-center group cursor-pointer">
-              <img
-                src={logoReact.src}
-                alt="React"
-                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
-              />
-              <figcaption
-                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
-              >
-                React
-              </figcaption>
-            </figure>
-
-            <figure class="flex flex-col items-center group cursor-pointer">
-              <img
-                src={logoJs.src}
-                alt="JavaScript"
-                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
-              />
-              <figcaption
-                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
-              >
-                JavaScript
-              </figcaption>
-            </figure>
-
-            <figure class="flex flex-col items-center group cursor-pointer">
-              <img
-                src={logoAstro.src}
-                alt="Astro"
-                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
-              />
-              <figcaption
-                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
-              >
-                Astro
-              </figcaption>
-            </figure>
-
-            <figure class="flex flex-col items-center group cursor-pointer">
-              <img
-                src={logoTailwind.src}
-                alt="TailwindCSS"
-                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
-              />
-              <figcaption
-                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
-              >
-                Tailwind
-              </figcaption>
-            </figure>
-
-            <figure class="flex flex-col items-center group cursor-pointer">
-              <img
-                src={logoLaravel.src}
-                alt="Laravel"
-                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
-              />
-              <figcaption
-                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
-              >
-                Laravel
-              </figcaption>
-            </figure>
-
-            <figure class="flex flex-col items-center group cursor-pointer">
-              <img
-                src={logoPhp.src}
-                alt="PHP"
-                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
-              />
-              <figcaption
-                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
-              >
-                PHP
-              </figcaption>
-            </figure>
-
-            <figure class="flex flex-col items-center group cursor-pointer">
-              <img
-                src={logoPython.src}
-                alt="Python"
-                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
-              />
-              <figcaption
-                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
-              >
-                Python
-              </figcaption>
-            </figure>
-
-            <figure class="flex flex-col items-center group cursor-pointer">
-              <img
-                src={logoGit.src}
-                alt="Git"
-                class="w-6 h-6 lg:w-8 lg:h-8 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out transform hover:scale-110"
-              />
-              <figcaption
-                class="bg-black text-white text-xs px-2 py-1 rounded-md mt-2"
-              >
-                Git
-              </figcaption>
-            </figure>
-          </div>
-        </div>
       </div>
     </div>
 
     <!-- Sección Experiencia -->
     <section
       id="experience"
-      class="min-h-screen lg:h-screen flex flex-col lg:justify-center snap-start px-4 lg:px-6 py-8 lg:py-0"
+      class="lg:min-h-screen lg:h-screen flex flex-col lg:justify-center lg:snap-start px-4 lg:px-6 py-8 lg:py-0"
     >
       <!-- Título de sección (solo móvil) -->
       <div class="sticky top-0 bg-white z-10 py-4 mb-4 lg:hidden border-b border-gray-200">
-        <h2 class="text-2xl font-bold tracking-wide text-gray-900">Experiencia</h2>
+        <h2 class="text-xl font-bold tracking-wide text-gray-900">Experiencia</h2>
       </div>
       <div class="space-y-12 w-full">
         <!-- Delta Consultores -->
         <div
-          class="space-y-4 mb-8 border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg p-6"
+          class="space-y-4 mb-8 border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg lg:p-6"
         >
           <div>
             <h4 class="text-lg lg:text-xl font-medium tracking-wide">
               Desarrollador FullStack | Delta Consultores
             </h4>
-            <p class="text-gray-600 text-sm">jun. 2025 — presente</p>
+            <p class="text-gray-600 text-sm">abr. 2025 — jul. 2025</p>
           </div>
           <p class="text-gray-800 leading-relaxed tracking-normal text-sm">
             Desarrollo y mantenimiento de plataforma web para servicios de
@@ -255,7 +140,7 @@ import astroWebImg from "../img-webs/astro-web.png";
 
         <!-- Proyectos Independientes -->
         <div
-          class="space-y-4 mb-8 border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg p-6"
+          class="space-y-4 mb-8 border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg lg:p-6"
         >
           <div>
             <h4 class="text-lg lg:text-xl font-medium tracking-wide">
@@ -264,11 +149,7 @@ import astroWebImg from "../img-webs/astro-web.png";
             <p class="text-gray-600 text-sm">ene. 2023 — presente</p>
           </div>
           <p class="text-gray-800 leading-relaxed tracking-normal text-sm">
-            Desarrollo de aplicaciones especializadas para análisis académico y
-            empresarial. Creación de calculadoras estadísticas (V-Aiken,
-            Cronbach), herramientas de construcción (cálculo de muros y
-            tarrajeo), sistemas de e-commerce y aplicaciones de traducción
-            automática de video.
+            Desarrollo de aplicaciones especializadas para análisis académico y empresarial. Creación de calculadoras estadísticas (V-Aiken, Cronbach), herramientas de construcción (cálculo de muros y tarrajeo), sistemas de e-commerce y aplicaciones de traducción automática de video.
           </p>
           <div class="flex flex-wrap gap-3 mt-4">
             <span class="bg-black text-white px-3 py-1 rounded-md text-xs"
@@ -294,16 +175,16 @@ import astroWebImg from "../img-webs/astro-web.png";
     <!-- Sección Proyectos -->
     <section
       id="projects"
-      class="min-h-screen lg:h-screen flex flex-col lg:justify-center snap-start px-4 lg:px-6 py-8 lg:py-0"
+      class="lg:min-h-screen lg:h-screen flex flex-col lg:justify-center lg:snap-start px-4 lg:px-6 py-8 lg:py-0"
     >
       <!-- Título de sección (solo móvil) -->
       <div class="sticky top-0 bg-white z-10 py-4 mb-4 lg:hidden border-b border-gray-200">
-        <h2 class="text-2xl font-bold tracking-wide text-gray-900">Proyectos</h2>
+        <h2 class="text-xl font-bold tracking-wide text-gray-900">Proyectos</h2>
       </div>
       <div class="space-y-6 w-full">
         <!-- Proyecto 1: Mesa de Partes Virtual -->
         <div
-          class="border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg p-6"
+          class="border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg lg:p-6"
         >
           <div class="flex flex-col sm:flex-row gap-6">
             <!-- Imagen preview -->
@@ -371,7 +252,7 @@ import astroWebImg from "../img-webs/astro-web.png";
 
         <!-- Proyecto 2: YanlEcommerce -->
         <div
-          class="border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg p-6"
+          class="border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg lg:p-6"
         >
           <div class="flex flex-col sm:flex-row gap-6">
             <!-- Imagen preview -->
@@ -434,7 +315,7 @@ import astroWebImg from "../img-webs/astro-web.png";
 
         <!-- Proyecto 3: Delta Astro -->
         <div
-          class="border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg p-6"
+          class="border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg lg:p-6"
         >
           <div class="flex flex-col sm:flex-row gap-6">
             <!-- Imagen preview -->
