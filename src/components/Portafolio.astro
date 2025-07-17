@@ -7,6 +7,7 @@ import logoPhp from "../icons/logo-php.png";
 import logoReact from "../icons/logo-react.png";
 import logoTailwind from "../icons/logo-tailwind.png";
 import logoPython from "../icons/logo-python.png";
+import astroWebImg from "../img-webs/astro-web.png";
 ---
 
 <main
@@ -14,17 +15,17 @@ import logoPython from "../icons/logo-python.png";
 >
   <!-- Sidebar fijo -->
   <section
-    class="w-full lg:w-2/5 flex flex-col justify-center lg:h-screen lg:sticky lg:top-0 space-y-6 lg:space-y-8"
+    class="w-full lg:w-2/5 flex flex-col justify-center lg:h-screen lg:sticky lg:top-0 space-y-6 lg:space-y-8 text-center lg:text-left"
   >
     <div>
-      <h1 class="text-4xl lg:text-6xl font-bold tracking-tight leading-tight">
+      <h1 class="text-2xl sm:text-4xl lg:text-6xl font-bold tracking-tight leading-tight">
         Milder Carreón
       </h1>
-      <h2 class="text-lg lg:text-xl text-gray-600 mt-2 tracking-wide">
+      <h2 class="text-base sm:text-lg lg:text-xl text-gray-600 mt-2 tracking-wide">
         Desarrollador FullStack | Ingeniero Industrial
       </h2>
     </div>
-    <nav class="mt-6 lg:mt-8">
+    <nav class="mt-6 lg:mt-8 hidden lg:block">
       <ul class="space-y-3 lg:space-y-2" id="nav-menu">
         <li>
           <a
@@ -49,22 +50,22 @@ import logoPython from "../icons/logo-python.png";
         </li>
       </ul>
     </nav>
-    <div class="mt-6 lg:mt-8 flex gap-4">
+    <div class="mt-4 lg:mt-8 flex gap-4 justify-center lg:justify-start">
       <a
         href="#"
-        class="text-xl lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
+        class="text-lg lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
       >
         <i class="fa-brands fa-github"></i>
       </a>
       <a
         href="#"
-        class="text-xl lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
+        class="text-lg lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
       >
         <i class="fa-brands fa-linkedin"></i>
       </a>
       <a
         href="#"
-        class="text-xl lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
+        class="text-lg lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
       >
         <i class="fa-solid fa-envelope"></i>
       </a>
@@ -73,34 +74,27 @@ import logoPython from "../icons/logo-python.png";
 
   <!-- Contenido principal con scroll snap -->
   <section
-    class="w-full lg:w-3/5 lg:h-screen lg:overflow-y-auto snap-y snap-mandatory scroll-smooth"
+    class="w-full lg:w-3/5 lg:h-screen lg:overflow-y-auto snap-y snap-mandatory scroll-smooth relative"
     id="main-content"
   >
     <!-- Sección Sobre mí -->
     <div
       id="about-me"
-      class="min-h-screen lg:h-screen flex items-center snap-start px-4 lg:px-6 py-8 lg:py-0"
+      class="min-h-screen lg:h-screen flex flex-col lg:items-center snap-start px-4 lg:px-6 py-8 lg:py-0"
     >
-      <div class="space-y-6 w-full">
-        <p class="tracking-normal text-base lg:text-lg leading-relaxed">
-          Soy una persona apasionada por la tecnología y el aprendizaje
-          constante. Me gusta crear software enfocado en facilitar flujos de
-          trabajo y desarrollar soluciones que resuelvan problemas reales. Mi
-          background como ingeniero industrial me permite pensar en procesos,
-          eficiencia y optimización, habilidades que van de la mano con el
-          desarrollo de software.
+      <!-- Título de sección (solo móvil) -->
+      <div class="sticky top-0 bg-white z-10 py-4 mb-4 lg:hidden border-b border-gray-200">
+        <h2 class="text-2xl font-bold tracking-wide text-gray-900">Sobre mí</h2>
+      </div>
+      <div class="space-y-6 w-full p-6 lg:p-0">
+        <p class="tracking-normal text-base md:text-md leading-relaxed">
+          Soy una persona apasionada por la tecnología y el aprendizaje constante. Me gusta crear software enfocado en facilitar flujos de trabajo y desarrollar soluciones que resuelvan problemas reales. Mi background como ingeniero industrial me permite pensar en procesos, eficiencia y optimización, habilidades que van de la mano con el desarrollo de software.
         </p>
-        <p class="tracking-normal text-base lg:text-lg leading-relaxed">
-          Mi curiosidad por entender cómo funciona la tecnología me llevó al
-          desarrollo de software. Comencé con Java y evolucioné hacia un stack
-          diverso que incluye Python, JavaScript (React, Astro) y PHP (Laravel),
-          aprendiendo tanto de Frontend como Backend para crear soluciones
-          reales en empresas y proyectos freelance.
+        <p class="tracking-normal text-base md:text-md leading-relaxed">
+          Mi curiosidad por entender cómo funciona la tecnología me llevó al desarrollo de software. Comencé con Java y evolucioné hacia un stack diverso que incluye Python, JavaScript (React, Astro) y PHP (Laravel), aprendiendo tanto de Frontend como Backend para crear soluciones reales en empresas y proyectos freelance.
         </p>
-        <p class="tracking-normal text-base lg:text-lg leading-relaxed">
-          Actualmente busco mi primera oportunidad formal en el mundo tech,
-          donde pueda colaborar en la creación de software que genere impacto
-          real.
+        <p class="tracking-normal text-base md:text-md leading-relaxed">
+          Actualmente busco mi primera oportunidad formal en el mundo tech, donde pueda colaborar en la creación de software que genere impacto real.
         </p>
 
         <div class="pt-8">
@@ -219,25 +213,29 @@ import logoPython from "../icons/logo-python.png";
     <!-- Sección Experiencia -->
     <section
       id="experience"
-      class="min-h-screen lg:h-screen flex flex-col justify-center snap-start px-4 lg:px-6 py-8 lg:py-0"
+      class="min-h-screen lg:h-screen flex flex-col lg:justify-center snap-start px-4 lg:px-6 py-8 lg:py-0"
     >
+      <!-- Título de sección (solo móvil) -->
+      <div class="sticky top-0 bg-white z-10 py-4 mb-4 lg:hidden border-b border-gray-200">
+        <h2 class="text-2xl font-bold tracking-wide text-gray-900">Experiencia</h2>
+      </div>
       <div class="space-y-12 w-full">
-        <h3 class="text-2xl lg:text-3xl font-semibold mb-8 tracking-wide">
-          Experiencia
-        </h3>
-
         <!-- Delta Consultores -->
-        <div class="space-y-4 mb-8">
+        <div
+          class="space-y-4 mb-8 border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg p-6"
+        >
           <div>
             <h4 class="text-lg lg:text-xl font-medium tracking-wide">
-              Desarrollador Full Stack | Delta Consultores
+              Desarrollador FullStack | Delta Consultores
             </h4>
             <p class="text-gray-600 text-sm">jun. 2025 — presente</p>
           </div>
-          <p
-            class="text-gray-800 leading-relaxed tracking-normal text-sm lg:text-base"
-          >
-            Desarrollo y mantenimiento de plataforma web para servicios de asesoría académica y tesis. Implementación de sistema de gestión de proyectos académicos, integración con Turnitin para verificación de originalidad, y desarrollo de dashboard administrativo para seguimiento de clientes.
+          <p class="text-gray-800 leading-relaxed tracking-normal text-sm">
+            Desarrollo y mantenimiento de plataforma web para servicios de
+            asesoría académica y tesis. Implementación de sistema de gestión de
+            proyectos académicos, integración con Turnitin para verificación de
+            originalidad, y desarrollo de dashboard administrativo para
+            seguimiento de clientes.
           </p>
           <div class="flex flex-wrap gap-3 mt-4">
             <span class="bg-black text-white px-3 py-1 rounded-md text-xs"
@@ -256,17 +254,21 @@ import logoPython from "../icons/logo-python.png";
         </div>
 
         <!-- Proyectos Independientes -->
-        <div class="space-y-4 mb-8">
+        <div
+          class="space-y-4 mb-8 border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg p-6"
+        >
           <div>
             <h4 class="text-lg lg:text-xl font-medium tracking-wide">
               Desarrollador de Software | Freelance
             </h4>
             <p class="text-gray-600 text-sm">ene. 2023 — presente</p>
           </div>
-          <p
-            class="text-gray-800 leading-relaxed tracking-normal text-sm lg:text-base"
-          >
-            Desarrollo de aplicaciones especializadas para análisis académico y empresarial. Creación de calculadoras estadísticas (V-Aiken, Cronbach), herramientas de construcción (cálculo de muros y tarrajeo), sistemas de e-commerce y aplicaciones de traducción automática de video.
+          <p class="text-gray-800 leading-relaxed tracking-normal text-sm">
+            Desarrollo de aplicaciones especializadas para análisis académico y
+            empresarial. Creación de calculadoras estadísticas (V-Aiken,
+            Cronbach), herramientas de construcción (cálculo de muros y
+            tarrajeo), sistemas de e-commerce y aplicaciones de traducción
+            automática de video.
           </p>
           <div class="flex flex-wrap gap-3 mt-4">
             <span class="bg-black text-white px-3 py-1 rounded-md text-xs"
@@ -292,20 +294,231 @@ import logoPython from "../icons/logo-python.png";
     <!-- Sección Proyectos -->
     <section
       id="projects"
-      class="min-h-screen lg:h-screen flex flex-col justify-center snap-start px-4 lg:px-6 py-8 lg:py-0"
+      class="min-h-screen lg:h-screen flex flex-col lg:justify-center snap-start px-4 lg:px-6 py-8 lg:py-0"
     >
-      <div class="space-y-12 w-full">
-        <h3 class="text-2xl lg:text-3xl font-semibold mb-8 tracking-wide">
-          Proyectos
-        </h3>
-        <p class="text-gray-600 text-base lg:text-lg tracking-normal">
-          Próximamente...
-        </p>
+      <!-- Título de sección (solo móvil) -->
+      <div class="sticky top-0 bg-white z-10 py-4 mb-4 lg:hidden border-b border-gray-200">
+        <h2 class="text-2xl font-bold tracking-wide text-gray-900">Proyectos</h2>
+      </div>
+      <div class="space-y-6 w-full">
+        <!-- Proyecto 1: Mesa de Partes Virtual -->
+        <div
+          class="border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg p-6"
+        >
+          <div class="flex flex-col sm:flex-row gap-6">
+            <!-- Imagen preview -->
+            <div class="w-full sm:flex-shrink-0 sm:w-24 sm:h-24 lg:w-32 lg:h-32">
+              <img
+                src={astroWebImg.src}
+                alt="Mesa de Partes Virtual Preview"
+                class="w-full h-48 sm:w-full sm:h-full object-cover rounded-lg border border-gray-200"
+              />
+            </div>
+
+            <!-- Contenido del proyecto -->
+            <div class="flex-1 min-w-0">
+              <!-- Header: Título y acciones en la misma línea -->
+              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3 gap-2">
+                <h4
+                  class="text-lg lg:text-xl font-semibold tracking-wide text-gray-900"
+                >
+                  Mesa de Partes Virtual
+                </h4>
+                <div class="flex gap-3 items-center flex-shrink-0">
+                  <span
+                    class="bg-gray-200 text-black px-2 py-1 rounded-md text-xs font-medium"
+                  >
+                    En desarrollo
+                  </span>
+                  <a
+                    href="https://github.com/YanlDev/mpvirtual"
+                    target="_blank"
+                    class="text-gray-600 hover:text-gray-900 transition-colors"
+                    aria-label="Ver código en GitHub"
+                  >
+                    <i class="fa-brands fa-github text-lg"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Descripción -->
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                Sistema de gestión documental virtual diseñado para instituciones públicas y privadas. Permite el registro, seguimiento y procesamiento de documentos de manera digital, optimizando los procesos administrativos y reduciendo tiempos de respuesta.
+              </p>
+
+              <!-- Stack tecnológico -->
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-black text-white px-3 py-1 rounded-md text-xs font-medium"
+                  >Laravel</span
+                >
+                <span
+                  class="bg-black text-white px-3 py-1 rounded-md text-xs font-medium"
+                  >PHP</span
+                >
+                <span
+                  class="bg-black text-white px-3 py-1 rounded-md text-xs font-medium"
+                  >Livewire</span
+                >
+                <span
+                  class="bg-black text-white px-3 py-1 rounded-md text-xs font-medium"
+                  >MySQL</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 2: YanlEcommerce -->
+        <div
+          class="border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg p-6"
+        >
+          <div class="flex flex-col sm:flex-row gap-6">
+            <!-- Imagen preview -->
+            <div class="w-full sm:flex-shrink-0 sm:w-24 sm:h-24 lg:w-32 lg:h-32">
+              <img
+                src={astroWebImg.src}
+                alt="YanlEcommerce Preview"
+                class="w-full h-48 sm:w-full sm:h-full object-cover rounded-lg border border-gray-200"
+              />
+            </div>
+
+            <!-- Contenido del proyecto -->
+            <div class="flex-1 min-w-0">
+              <!-- Header: Título y acciones -->
+              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3 gap-2">
+                <h4
+                  class="text-lg lg:text-xl font-semibold tracking-wide text-gray-900"
+                >
+                  E-commerce 
+                </h4>
+                <div class="flex gap-3 items-center flex-shrink-0">
+                  <a
+                    href="https://github.com/YanlDev/yanlecommerce"
+                    target="_blank"
+                    class="text-gray-600 hover:text-gray-900 transition-colors"
+                    aria-label="Ver código en GitHub"
+                  >
+                    <i class="fa-brands fa-github text-lg"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Descripción -->
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                Plataforma de comercio electrónico completa desarrollada en Laravel. Incluye gestión de productos, carrito de compras, sistema de autenticación de usuarios, panel administrativo y procesamiento de órdenes. Diseño responsivo optimizado para diferentes dispositivos.
+              </p>
+
+              <!-- Stack tecnológico -->
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-black text-white px-3 py-1 rounded-md text-xs font-medium"
+                  >Laravel</span
+                >
+                <span
+                  class="bg-black text-white px-3 py-1 rounded-md text-xs font-medium"
+                  >PHP</span
+                >
+                <span
+                  class="bg-black text-white px-3 py-1 rounded-md text-xs font-medium"
+                  >Livewire</span
+                >
+                <span
+                  class="bg-black text-white px-3 py-1 rounded-md text-xs font-medium"
+                  >MySQL</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 3: Delta Astro -->
+        <div
+          class="border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg p-6"
+        >
+          <div class="flex flex-col sm:flex-row gap-6">
+            <!-- Imagen preview -->
+            <div class="w-full sm:flex-shrink-0 sm:w-24 sm:h-24 lg:w-32 lg:h-32">
+              <img
+                src={astroWebImg.src}
+                alt="Delta Astro Preview"
+                class="w-full h-48 sm:w-full sm:h-full object-cover rounded-lg border border-gray-200"
+              />
+            </div>
+
+            <!-- Contenido del proyecto -->
+            <div class="flex-1 min-w-0">
+              <!-- Header: Título y acciones -->
+              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3 gap-2">
+                <h4
+                  class="text-lg lg:text-xl font-semibold tracking-wide text-gray-900"
+                >
+                  Delta Consultores
+                </h4>
+                <div class="flex gap-3 items-center flex-shrink-0">
+                  <a
+                    href="https://deltatesis.com/turnitin/"
+                    target="_blank"
+                    class="text-gray-600 hover:text-gray-900 transition-colors"
+                    aria-label="Ver demo del proyecto"
+                  >
+                    <i class="fa-solid fa-external-link text-sm"></i>
+                  </a>
+                  <a
+                    href="https://github.com/YanlDev/delta-astro"
+                    target="_blank"
+                    class="text-gray-600 hover:text-gray-900 transition-colors"
+                    aria-label="Ver código en GitHub"
+                  >
+                    <i class="fa-brands fa-github text-lg"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Descripción -->
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                Sitio web corporativo moderno construido con Astro, enfocado en alto rendimiento y SEO optimizado. Diseño responsivo con animaciones suaves y carga ultrarrápida, ideal para presentar servicios profesionales de consultoría.
+              </p>
+
+              <!-- Stack tecnológico -->
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-black text-white px-3 py-1 rounded-md text-xs font-medium"
+                  >Astro</span
+                >
+                <span
+                  class="bg-black text-white px-3 py-1 rounded-md text-xs font-medium"
+                  >JavaScript</span
+                >
+                <span
+                  class="bg-black text-white px-3 py-1 rounded-md text-xs font-medium"
+                  >CSS</span
+                >
+                <span
+                  class="bg-black text-white px-3 py-1 rounded-md text-xs font-medium"
+                  >Tailwind</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enlace a todos los proyectos -->
+        <div class="text-center pt-4">
+          <a
+            href="/projects"
+            class="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base group font-medium"
+          >
+            Ver todos los proyectos
+            <i
+              class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"
+            ></i>
+          </a>
+        </div>
       </div>
     </section>
   </section>
 </main>
-
 <style>
   /* Estilo para navegación activa */
   .nav-link {
@@ -395,71 +608,60 @@ import logoPython from "../icons/logo-python.png";
     const navLinks = document.querySelectorAll(".nav-link");
     const scrollContainer = document.getElementById("main-content");
 
-    // Marcar la primera sección como activa al cargar
-    navLinks[0].classList.add("active");
+    // Solo ejecutar en desktop (cuando el nav está visible)
+    if (window.innerWidth >= 1024) {
+      // Marcar la primera sección como activa al cargar
+      if (navLinks.length > 0) {
+        navLinks[0].classList.add("active");
+      }
 
-    // Observer para detectar sección visible
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-            // Remover active de todos los links
-            navLinks.forEach((link) => link.classList.remove("active"));
+      // Observer simple para navegación en desktop
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+              // Remover active de todos los links
+              navLinks.forEach((link) => link.classList.remove("active"));
 
-            // Agregar active al link correspondiente
-            const activeLink = document.querySelector(
-              `[data-section="${entry.target.id}"]`
-            );
-            if (activeLink) {
-              activeLink.classList.add("active");
+              // Agregar active al link correspondiente
+              const activeLink = document.querySelector(
+                `[data-section="${entry.target.id}"]`
+              );
+              if (activeLink) {
+                activeLink.classList.add("active");
+              }
             }
+          });
+        },
+        {
+          root: scrollContainer,
+          threshold: [0.5],
+          rootMargin: "-20% 0px -20% 0px",
+        }
+      );
+
+      // Observar todas las secciones
+      sections.forEach((section) => observer.observe(section));
+
+      // Scroll suave al hacer click en navegación
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("data-section");
+          const targetSection = document.getElementById(targetId);
+
+          if (targetSection) {
+            // Marcar inmediatamente como activo para mejor UX
+            navLinks.forEach((l) => l.classList.remove("active"));
+            link.classList.add("active");
+
+            targetSection.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
           }
         });
-      },
-      {
-        root: scrollContainer,
-        threshold: [0.3, 0.5, 0.7],
-        rootMargin: "-20% 0px -20% 0px",
-      }
-    );
-
-    // Observar todas las secciones
-    sections.forEach((section) => observer.observe(section));
-
-    // Scroll suave al hacer click en navegación
-    navLinks.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute("data-section");
-        const targetSection = document.getElementById(targetId);
-
-        if (targetSection) {
-          // Marcar inmediatamente como activo para mejor UX
-          navLinks.forEach((l) => l.classList.remove("active"));
-          link.classList.add("active");
-
-          targetSection.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
       });
-    });
-
-    // Mejorar la experiencia en móvil
-    let isScrolling = false;
-
-    scrollContainer.addEventListener(
-      "scroll",
-      () => {
-        if (!isScrolling) {
-          window.requestAnimationFrame(() => {
-            isScrolling = false;
-          });
-          isScrolling = true;
-        }
-      },
-      { passive: true }
-    );
+    }
   });
 </script>
