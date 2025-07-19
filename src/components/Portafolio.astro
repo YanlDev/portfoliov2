@@ -57,13 +57,30 @@ import astroWebImg from "../img-webs/astro-web.png";
       >
         <i class="fa-brands fa-linkedin"></i>
       </a>
-      <a
-        href="#"
-        target="_blank"
-        class="text-lg lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
-      >
-        <i class="fa-solid fa-envelope"></i>
-      </a>
+      <div class="relative">
+        <button
+          id="email-button"
+          class="text-lg lg:text-2xl hover:text-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110"
+        >
+          <i class="fa-solid fa-envelope"></i>
+        </button>
+        <!-- Modal pequeño -->
+        <div id="email-modal" class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-white border border-gray-200 rounded-lg shadow-lg p-4 min-w-max hidden z-50">
+          <div class="flex items-center justify-between bg-gray-50 p-2 rounded-md">
+            <span class="text-gray-700 font-mono text-sm">mycarreon123@gmail.com</span>
+            <button 
+              id="copy-email" 
+              class="text-gray-600 hover:text-gray-900 transition-colors ml-3"
+              title="Copiar email"
+            >
+              <i class="fa-solid fa-copy"></i>
+            </button>
+          </div>
+          <div id="copy-feedback" class="text-xs text-green-600 mt-1 text-center hidden">
+            ¡Copiado!
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -107,7 +124,7 @@ import astroWebImg from "../img-webs/astro-web.png";
       <div class="space-y-12 w-full">
         <!-- Delta Consultores -->
         <div
-          class="space-y-4 mb-8 border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg lg:p-6"
+          class="space-y-4 mb-8 lg:border lg:border-transparent lg:hover:border-gray-400 lg:transition-all lg:duration-300 lg:hover:shadow-lg lg:rounded-lg lg:p-6"
         >
           <div>
             <h4 class="text-lg lg:text-xl font-medium tracking-wide">
@@ -140,7 +157,7 @@ import astroWebImg from "../img-webs/astro-web.png";
 
         <!-- Proyectos Independientes -->
         <div
-          class="space-y-4 mb-8 border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg lg:p-6"
+          class="space-y-4 mb-8 lg:border lg:border-transparent lg:hover:border-gray-400 lg:transition-all lg:duration-300 lg:hover:shadow-lg lg:rounded-lg lg:p-6"
         >
           <div>
             <h4 class="text-lg lg:text-xl font-medium tracking-wide">
@@ -184,7 +201,7 @@ import astroWebImg from "../img-webs/astro-web.png";
       <div class="space-y-6 w-full">
         <!-- Proyecto 1: Mesa de Partes Virtual -->
         <div
-          class="border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg lg:p-6"
+          class="lg:border lg:border-transparent lg:hover:border-gray-400 lg:transition-all lg:duration-300 lg:hover:shadow-lg lg:rounded-lg lg:p-6"
         >
           <div class="flex flex-col sm:flex-row gap-6">
             <!-- Imagen preview -->
@@ -252,7 +269,7 @@ import astroWebImg from "../img-webs/astro-web.png";
 
         <!-- Proyecto 2: YanlEcommerce -->
         <div
-          class="border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg lg:p-6"
+          class="lg:border lg:border-transparent lg:hover:border-gray-400 lg:transition-all lg:duration-300 lg:hover:shadow-lg lg:rounded-lg lg:p-6"
         >
           <div class="flex flex-col sm:flex-row gap-6">
             <!-- Imagen preview -->
@@ -315,7 +332,7 @@ import astroWebImg from "../img-webs/astro-web.png";
 
         <!-- Proyecto 3: Delta Astro -->
         <div
-          class="border border-transparent hover:border-gray-400 transition-all duration-300 hover:shadow-lg rounded-lg lg:p-6"
+          class="lg:border lg:border-transparent lg:hover:border-gray-400 lg:transition-all lg:duration-300 lg:hover:shadow-lg lg:rounded-lg lg:p-6"
         >
           <div class="flex flex-col sm:flex-row gap-6">
             <!-- Imagen preview -->
@@ -400,6 +417,31 @@ import astroWebImg from "../img-webs/astro-web.png";
     </section>
   </section>
 </main>
+
+<!-- Modal para mostrar email -->
+<div id="email-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg p-6 max-w-sm w-full mx-4 shadow-xl">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-lg font-semibold">Contacto</h3>
+      <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+        <i class="fa-solid fa-times"></i>
+      </button>
+    </div>
+    <div class="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
+      <span class="text-gray-700 font-mono text-sm">mycarreon123@gmail.com</span>
+      <button 
+        id="copy-email" 
+        class="text-gray-600 hover:text-gray-900 transition-colors ml-2"
+        title="Copiar email"
+      >
+        <i class="fa-solid fa-copy"></i>
+      </button>
+    </div>
+    <div id="copy-feedback" class="text-sm text-green-600 mt-2 hidden">
+      ¡Email copiado al portapapeles!
+    </div>
+  </div>
+</div>
 <style>
   /* Estilo para navegación activa */
   .nav-link {
@@ -544,5 +586,49 @@ import astroWebImg from "../img-webs/astro-web.png";
         });
       });
     }
+
+    // Funcionalidad del modal de email
+    const emailButton = document.getElementById("email-button");
+    const emailModal = document.getElementById("email-modal");
+    const closeModal = document.getElementById("close-modal");
+    const copyEmail = document.getElementById("copy-email");
+    const copyFeedback = document.getElementById("copy-feedback");
+
+    // Abrir modal
+    emailButton.addEventListener("click", () => {
+      emailModal.classList.remove("hidden");
+    });
+
+    // Cerrar modal
+    closeModal.addEventListener("click", () => {
+      emailModal.classList.add("hidden");
+    });
+
+    // Cerrar modal al hacer click fuera
+    emailModal.addEventListener("click", (e) => {
+      if (e.target === emailModal) {
+        emailModal.classList.add("hidden");
+      }
+    });
+
+    // Copiar email
+    copyEmail.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText("mycarreon123@gmail.com");
+        copyFeedback.classList.remove("hidden");
+        setTimeout(() => {
+          copyFeedback.classList.add("hidden");
+        }, 2000);
+      } catch (err) {
+        console.error("Error al copiar email:", err);
+      }
+    });
+
+    // Cerrar modal with Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !emailModal.classList.contains("hidden")) {
+        emailModal.classList.add("hidden");
+      }
+    });
   });
 </script>

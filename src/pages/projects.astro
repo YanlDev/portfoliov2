@@ -1,0 +1,189 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+import { getSortedProjects } from '../data/projects.js';
+
+const sortedProjects = getSortedProjects();
+---
+
+<Layout title="Todos los Proyectos - Milder Carreón">
+  <main class="container mx-auto max-w-7xl min-h-screen font-inter px-4 py-8">
+    <!-- Header -->
+    <header class="border-b border-gray-200 pb-6 mb-8">
+      <div class="flex items-center gap-4 mb-4">
+        <a 
+          href="/" 
+          class="text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-2 text-md"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+          Milder Carreón
+        </a>
+      </div>
+      <h1 class="text-2xl md:text-2xl lg:text-2xl font-bold tracking-tight leading-tight text-gray-900">
+        Todos los Proyectos
+      </h1>
+    </header>
+
+    <!-- Content -->
+    <div class="relative">
+      <!-- Table Header - Sticky -->
+      <div class="sticky top-0 bg-white z-10 border-b border-gray-200 pb-4 mb-6">
+        <div class="hidden md:grid md:grid-cols-10 gap-4 text-gray-600 text-sm font-medium">
+          <div class="col-span-1">Año</div>
+          <div class="col-span-5">Proyecto</div>
+          <div class="col-span-3">Tecnologías</div>
+          <div class="col-span-1">Links</div>
+        </div>
+      </div>
+
+      <!-- Projects List -->
+      <div class="space-y-4">
+        {sortedProjects.map((project) => (
+          <!-- Desktop Layout -->
+          <div class="hidden md:grid md:grid-cols-10 gap-4 py-6 border-b border-gray-100 hover:bg-gray-50/50 transition-colors group">
+            <!-- Año -->
+            <div class="col-span-1 text-gray-500 text-sm font-medium">
+              {project.year}
+            </div>
+
+            <!-- Proyecto -->
+            <div class="col-span-5">
+              <h3 class="text-gray-900 font-semibold text-lg mb-1 group-hover:text-gray-600 transition-colors">
+                {project.name}
+              </h3>
+              <p class="text-gray-600 text-sm leading-relaxed line-clamp-2">
+                {project.description}
+              </p>
+              <div class="text-gray-500 text-xs mt-1">
+                {project.category}
+              </div>
+            </div>
+
+            <!-- Tecnologías -->
+            <div class="col-span-3">
+              <div class="flex flex-wrap gap-1">
+                {project.technologies.slice(0, 4).map((tech) => (
+                  <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium">
+                    {tech}
+                  </span>
+                ))}
+                {project.technologies.length > 4 && (
+                  <span class="text-gray-500 text-xs px-2 py-1 font-medium">
+                    +{project.technologies.length - 4}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            <!-- Links -->
+            <div class="col-span-1 flex gap-2">
+              <a
+                href={project.github}
+                target="_blank"
+                class="text-gray-400 hover:text-gray-600 transition-colors"
+                title="Ver en GitHub"
+              >
+                <i class="fa-brands fa-github text-lg"></i>
+              </a>
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  class="text-gray-400 hover:text-gray-600 transition-colors"
+                  title="Ver demo"
+                >
+                  <i class="fa-solid fa-external-link text-sm"></i>
+                </a>
+              )}
+            </div>
+          </div>
+
+          <!-- Mobile Layout -->
+          <div class="md:hidden bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+            <div class="flex justify-between items-start mb-3">
+              <div class="flex-1">
+                <h3 class="text-gray-900 font-semibold text-lg mb-1">
+                  {project.name}
+                </h3>
+                <div class="flex items-center gap-2 text-sm text-gray-500">
+                  <span>{project.year}</span>
+                  <span>•</span>
+                  <span>{project.category}</span>
+                </div>
+              </div>
+              <div class="flex gap-2 ml-3">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  class="text-gray-400 hover:text-gray-600 transition-colors"
+                  title="Ver en GitHub"
+                >
+                  <i class="fa-brands fa-github text-lg"></i>
+                </a>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    class="text-gray-400 hover:text-gray-600 transition-colors"
+                    title="Ver demo"
+                  >
+                    <i class="fa-solid fa-external-link text-sm"></i>
+                  </a>
+                )}
+              </div>
+            </div>
+            
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">
+              {project.description}
+            </p>
+            
+            <div class="flex flex-wrap gap-1">
+              {project.technologies.slice(0, 4).map((tech) => (
+                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium">
+                  {tech}
+                </span>
+              ))}
+              {project.technologies.length > 4 && (
+                <span class="text-gray-500 text-xs px-2 py-1 font-medium">
+                  +{project.technologies.length - 4}
+                </span>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Smooth scrolling for better UX */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+</style>
