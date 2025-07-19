@@ -1,28 +1,6 @@
 export const projects = [
   // 2025
   {
-    name: "Portfolio V2",
-    description: "Segunda versión de mi portafolio personal con diseño moderno y optimizado. Incluye navegación fluida, diseño responsivo y mejores prácticas de desarrollo.",
-    year: 2025,
-    month: "Jun",
-    technologies: ["Astro", "JavaScript", "CSS", "Tailwind"],
-    status: "Completado",
-    github: "https://github.com/YanlDev/portfoliov2",
-    demo: null,
-    category: "Web Development"
-  },
-  {
-    name: "Yanl E-commerce",
-    description: "Plataforma de comercio electrónico completa con gestión de productos, carrito de compras, autenticación y panel administrativo.",
-    year: 2025,
-    month: "Jun",
-    technologies: ["Laravel", "PHP", "Blade", "MySQL"],
-    status: "Completado",
-    github: "https://github.com/YanlDev/yanlecommerce",
-    demo: null,
-    category: "Full Stack"
-  },
-  {
     name: "Video Traductor",
     description: "Aplicación para traducción automática de videos con procesamiento de audio y subtítulos.",
     year: 2025,
@@ -43,28 +21,6 @@ export const projects = [
     github: "https://github.com/YanlDev/video-translator-es",
     demo: null,
     category: "AI/ML"
-  },
-  {
-    name: "Delta Astro",
-    description: "Sitio web corporativo para Delta Consultores con diseño moderno y optimizado para SEO.",
-    year: 2025,
-    month: "Jun",
-    technologies: ["Astro", "JavaScript", "Tailwind"],
-    status: "Completado",
-    github: "https://github.com/YanlDev/delta-astro",
-    demo: "https://deltatesis.com/turnitin/",
-    category: "Web Development"
-  },
-  {
-    name: "Mesa de Partes Virtual",
-    description: "Sistema de gestión documental virtual para instituciones públicas y privadas.",
-    year: 2025,
-    month: "May",
-    technologies: ["Laravel", "PHP", "Blade", "MySQL"],
-    status: "En desarrollo",
-    github: "https://github.com/YanlDev/mpvirtual",
-    demo: null,
-    category: "Full Stack"
   },
   {
     name: "Munakuyky Web",
@@ -121,29 +77,49 @@ export const projects = [
     demo: null,
     category: "Tools"
   },
-
-  // 2024
   {
-    name: "Single Price Grid",
-    description: "Componente de tarjeta de precios con CSS Grid y diseño responsivo.",
-    year: 2024,
-    month: "Oct",
-    technologies: ["HTML", "CSS"],
+    name: "Calculadora V de Aiken",
+    description: "Herramienta estadística para calcular el coeficiente V de Aiken, usado para validar la claridad y relevancia de ítems en cuestionarios.",
+    year: 2025,
+    month: "Mar",
+    technologies: ["Python", "Statistics"],
     status: "Completado",
-    github: "https://github.com/YanlDev/single-price-grid",
+    github: "https://github.com/YanlDev/v-aiken-calculator",
     demo: null,
-    category: "Frontend"
+    category: "Tools"
   },
   {
-    name: "Music Component",
-    description: "Componente de reproductor de música con CSS puro.",
-    year: 2024,
-    month: "Oct",
-    technologies: ["HTML", "CSS"],
+    name: "Calculadora Cronbach Alpha",
+    description: "Aplicación para calcular el coeficiente alfa de Cronbach, midiendo la consistencia interna de escalas psicométricas.",
+    year: 2025,
+    month: "Mar",
+    technologies: ["Python", "Statistics"],
     status: "Completado",
-    github: "https://github.com/YanlDev/music_component",
+    github: "https://github.com/YanlDev/cronbach-alpha-calculator",
     demo: null,
-    category: "Frontend"
+    category: "Tools"
+  },
+  {
+    name: "Calculadora de Muros",
+    description: "Herramienta para calcular materiales necesarios en construcción de muros: ladrillos, cemento y arena.",
+    year: 2025,
+    month: "Mar",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    status: "Completado",
+    github: "https://github.com/YanlDev/calculadora-muros",
+    demo: null,
+    category: "Tools"
+  },
+  {
+    name: "Calculadora de Tarrajeo",
+    description: "Sistema para calcular materiales de tarrajeo en construcción: cemento, arena fina y rendimiento por m².",
+    year: 2025,
+    month: "Mar",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    status: "Completado",
+    github: "https://github.com/YanlDev/calculadora-tarrajeo",
+    demo: null,
+    category: "Tools"
   },
   {
     name: "Blog Preview Card",
@@ -201,7 +177,6 @@ export const projects = [
     category: "Tools"
   },
 
-  // 2023
   {
     name: "Java Conversor",
     description: "Conversor de monedas y temperaturas desarrollado en Java con interfaz gráfica.",
