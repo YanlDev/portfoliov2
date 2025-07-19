@@ -12,17 +12,6 @@ export const projects = [
     category: "AI/ML"
   },
   {
-    name: "Video Translator ES",
-    description: "Versión mejorada del traductor de videos con soporte específico para español.",
-    year: 2025,
-    month: "Jun",
-    technologies: ["Python", "AI/ML"],
-    status: "Completado",
-    github: "https://github.com/YanlDev/video-translator-es",
-    demo: null,
-    category: "AI/ML"
-  },
-  {
     name: "Munakuyky Web",
     description: "Catálogo virtual para tienda de regalos con diseño atractivo y funcional.",
     year: 2025,
@@ -32,17 +21,6 @@ export const projects = [
     github: "https://github.com/YanlDev/munakuykyweb",
     demo: null,
     category: "Web Development"
-  },
-  {
-    name: "Astro Tutorial",
-    description: "Proyecto de aprendizaje para dominar el framework Astro.",
-    year: 2025,
-    month: "May",
-    technologies: ["Astro", "JavaScript"],
-    status: "Completado",
-    github: "https://github.com/YanlDev/Astrotutorial",
-    demo: null,
-    category: "Learning"
   },
   {
     name: "E-commerce Laravel",
