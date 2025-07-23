@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private pages (if any)
+Disallow: /admin/
+Disallow: /_*
+
+# Allow all crawlers access to CSS and JS
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap location
+Sitemap: https://mildercarreon.netlify.app/sitemap.xml
+
+# Crawl-delay (optional, for heavy crawlers)
+Crawl-delay: 1

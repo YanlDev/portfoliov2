@@ -1,0 +1,8 @@
+# Redirect trailing slashes (optional)
+/projects  /projects/  301
+
+# SPA fallback
+/*    /index.html   200
+
+# Force HTTPS
+http://mildercarreon.netlify.app/*  https://mildercarreon.netlify.app/:splat  301!

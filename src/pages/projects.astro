@@ -4,9 +4,102 @@ import "../styles/global.css";
 import { getSortedProjects } from '../data/projects.js';
 
 const sortedProjects = getSortedProjects();
+
+// SEO específico para la página de proyectos
+const seoData = {
+  title: "Proyectos - Milder Carreón | Desarrollador FullStack",
+  description: "Explora mi portafolio de proyectos: aplicaciones web con React, sistemas Laravel, herramientas Python, calculadoras especializadas y más. Desarrollo FullStack con tecnologías modernas.",
+  keywords: "proyectos milder carreon, portfolio desarrollador, proyectos react, proyectos laravel, aplicaciones python, ecommerce laravel, calculadoras estadisticas, proyectos javascript, desarrollo web peru",
+  url: "https://mildercarreon.netlify.app/projects",
+  image: "https://mildercarreon.netlify.app/og-projects.jpg"
+};
 ---
 
-<Layout title="Todos los Proyectos - Milder Carreón">
+<Layout {...seoData}>
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://mildercarreon.netlify.app"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Proyectos",
+        "item": "https://mildercarreon.netlify.app/projects"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Projects Collection Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Portfolio de Proyectos - Milder Carreón",
+    "description": "Colección de proyectos de desarrollo web y software creados por Milder Carreón",
+    "author": {
+      "@type": "Person",
+      "name": "Milder Yaniv Carreón Chambi"
+    },
+    "url": "https://mildercarreon.netlify.app/projects",
+    "dateCreated": "2023-01-01",
+    "dateModified": "2025-01-21",
+    "workExample": [
+      {sortedProjects.slice(0, 10).map(project => `{
+        "@type": "SoftwareApplication",
+        "name": "${project.name}",
+        "description": "${project.description}",
+        "dateCreated": "${project.year}-01-01",
+        "programmingLanguage": [${project.technologies.map(tech => `"${tech}"`).join(', ')}],
+        "codeRepository": "${project.github}",
+        "applicationCategory": "${project.category}",
+        "author": {
+          "@type": "Person", 
+          "name": "Milder Yaniv Carreón Chambi"
+        }
+      }`).join(',')}
+    ]
+  }
+  </script>
+
+  <!-- ItemList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Proyectos de Desarrollo de Milder Carreón",
+    "description": "Lista completa de proyectos de desarrollo web y software",
+    "numberOfItems": {sortedProjects.length},
+    "itemListElement": [
+      {sortedProjects.slice(0, 20).map((project, index) => `{
+        "@type": "ListItem",
+        "position": ${index + 1},
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "${project.name}",
+          "description": "${project.description}",
+          "url": "${project.github}",
+          "applicationCategory": "${project.category}",
+          "dateCreated": "${project.year}-01-01",
+          "programmingLanguage": [${project.technologies.map(tech => `"${tech}"`).join(', ')}],
+          "author": {
+            "@type": "Person",
+            "name": "Milder Yaniv Carreón Chambi"
+          }
+        }
+      }`).join(',')}
+    ]
+  }
+  </script>
+
   <main class="container mx-auto max-w-7xl min-h-screen font-inter px-4 py-8">
     <!-- Header -->
     <header class="border-b border-gray-200 pb-6 mb-8">
@@ -14,8 +107,9 @@ const sortedProjects = getSortedProjects();
         <a 
           href="/" 
           class="text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-2 text-md"
+          aria-label="Volver al inicio - Milder Carreón Portfolio"
         >
-          <i class="fa-solid fa-arrow-left"></i>
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
           Milder Carreón
         </a>
       </div>
@@ -43,14 +137,14 @@ const sortedProjects = getSortedProjects();
           <div class="hidden md:grid md:grid-cols-10 gap-4 py-6 border-b border-gray-100 hover:bg-gray-50/50 transition-colors group">
             <!-- Año -->
             <div class="col-span-1 text-gray-500 text-sm font-medium">
-              {project.year}
+              <time datetime={`${project.year}-01-01`}>{project.year}</time>
             </div>
 
             <!-- Proyecto -->
             <div class="col-span-5">
-              <h3 class="text-gray-900 font-semibold text-lg mb-1 group-hover:text-gray-600 transition-colors">
+              <h2 class="text-gray-900 font-semibold text-lg mb-1 group-hover:text-gray-600 transition-colors">
                 {project.name}
-              </h3>
+              </h2>
               <p class="text-gray-600 text-sm leading-relaxed line-clamp-2">
                 {project.description}
               </p>
@@ -80,19 +174,21 @@ const sortedProjects = getSortedProjects();
               <a
                 href={project.github}
                 target="_blank"
+                rel="noopener noreferrer"
                 class="text-gray-400 hover:text-gray-600 transition-colors"
-                title="Ver en GitHub"
+                aria-label={`Ver código fuente de ${project.name} en GitHub`}
               >
-                <i class="fa-brands fa-github text-lg"></i>
+                <i class="fa-brands fa-github text-lg" aria-hidden="true"></i>
               </a>
               {project.demo && (
                 <a
                   href={project.demo}
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="text-gray-400 hover:text-gray-600 transition-colors"
-                  title="Ver demo"
+                  aria-label={`Ver demo en vivo de ${project.name}`}
                 >
-                  <i class="fa-solid fa-external-link text-sm"></i>
+                  <i class="fa-solid fa-external-link text-sm" aria-hidden="true"></i>
                 </a>
               )}
             </div>
@@ -102,12 +198,12 @@ const sortedProjects = getSortedProjects();
           <div class="md:hidden bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
             <div class="flex justify-between items-start mb-3">
               <div class="flex-1">
-                <h3 class="text-gray-900 font-semibold text-lg mb-1">
+                <h2 class="text-gray-900 font-semibold text-lg mb-1">
                   {project.name}
-                </h3>
+                </h2>
                 <div class="flex items-center gap-2 text-sm text-gray-500">
-                  <span>{project.year}</span>
-                  <span>•</span>
+                  <time datetime={`${project.year}-01-01`}>{project.year}</time>
+                  <span aria-hidden="true">•</span>
                   <span>{project.category}</span>
                 </div>
               </div>
@@ -115,19 +211,21 @@ const sortedProjects = getSortedProjects();
                 <a
                   href={project.github}
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="text-gray-400 hover:text-gray-600 transition-colors"
-                  title="Ver en GitHub"
+                  aria-label={`GitHub: ${project.name}`}
                 >
-                  <i class="fa-brands fa-github text-lg"></i>
+                  <i class="fa-brands fa-github text-lg" aria-hidden="true"></i>
                 </a>
                 {project.demo && (
                   <a
                     href={project.demo}
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="text-gray-400 hover:text-gray-600 transition-colors"
-                    title="Ver demo"
+                    aria-label={`Demo: ${project.name}`}
                   >
-                    <i class="fa-solid fa-external-link text-sm"></i>
+                    <i class="fa-solid fa-external-link text-sm" aria-hidden="true"></i>
                   </a>
                 )}
               </div>
