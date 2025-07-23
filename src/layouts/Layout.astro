@@ -1,12 +1,148 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  url?: string;
+}
+
+const {
+  title = "Milder Carreón - Desarrollador FullStack | Portfolio",
+  description = "Desarrollador FullStack especializado en JavaScript, React, Laravel y Python. Ingeniero Industrial con experiencia en desarrollo web y soluciones tecnológicas en Puno, Perú.",
+  keywords = "desarrollador fullstack, programador javascript, react developer, laravel developer, python developer, ingeniero industrial, portfolio developer, puno peru, astro developer",
+  image = "https://mildercarreon.netlify.app/og-image.jpg",
+  url = "https://mildercarreon.netlify.app",
+} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Milder Yaniv Carreón Chambi</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Milder Yaniv Carreón Chambi" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href={url} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:site_name" content="Milder Carreón Portfolio" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:creator" content="@YanlDev" />
+
+    <meta property="linkedin:owner" content="yaniv-carreon" />
+
+    <meta name="geo.region" content="PE-PUN" />
+    <meta name="geo.placename" content="Puno, Perú" />
+    <meta name="geo.position" content="-15.8422;-70.0199" />
+    <meta name="ICBM" content="-15.8422, -70.0199" />
+
+    <!-- Preload Critical Resources -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      /></noscript
+    >
+
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      /></noscript
+    >
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="//github.com" />
+    <link rel="dns-prefetch" href="//linkedin.com" />
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Milder Yaniv Carreón Chambi",
+        "alternateName": "Milder Carreón",
+        "jobTitle": "Desarrollador FullStack",
+        "description": "Desarrollador FullStack especializado en JavaScript, React, Laravel y Python. Ingeniero Industrial con experiencia en desarrollo web.",
+        "url": "https://mildercarreon.netlify.app",
+        "email": "mycarreon123@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Puno",
+          "addressCountry": "PE"
+        },
+        "sameAs": [
+          "https://github.com/YanlDev",
+          "https://www.linkedin.com/in/yaniv-carreon/"
+        ],
+        "knowsAbout": [
+          "JavaScript",
+          "React",
+          "Laravel",
+          "PHP",
+          "Python",
+          "Astro",
+          "Tailwind CSS",
+          "MySQL",
+          "HTML",
+          "CSS",
+          "Git",
+          "Ingeniería Industrial"
+        ],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Desarrollador de Software",
+          "occupationLocation": {
+            "@type": "City",
+            "name": "Puno, Perú"
+          }
+        },
+        "seeks": {
+          "@type": "Demand",
+          "name": "Oportunidad laboral como Desarrollador FullStack"
+        }
+      }
+    </script>
   </head>
   <body>
     <slot />

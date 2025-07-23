@@ -3,10 +3,82 @@ import Portafolio from "../components/Portafolio.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const seoData = {
+  title: "Milder Carreón - Desarrollador FullStack | Portfolio",
+  description:
+    "Desarrollador FullStack especializado en JavaScript, React, Laravel y Python. Ingeniero Industrial con experiencia en desarrollo web y soluciones tecnológicas en Puno, Perú.",
+  keywords:
+    "milder carreon, desarrollador fullstack peru, programador javascript puno, react developer, laravel developer, python developer, ingeniero industrial, portfolio developer, desarrollador web peru, astro developer, tailwind css",
+  url: "https://mildercarreon.netlify.app",
+  image: "https://mildercarreon.netlify.app/og-home.jpg",
+};
 ---
 
-<Layout>
+<Layout {...seoData}>
+  <!-- Breadcrumb Schema para la página principal -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://mildercarreon.netlify.app"
+        }
+      ]
+    }
+  </script>
+
+  <!-- WebSite Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Milder Carreón Portfolio",
+      "alternateName": "Portfolio Milder Carreón",
+      "url": "https://mildercarreon.netlify.app",
+      "description": "Portfolio profesional de Milder Carreón, Desarrollador FullStack especializado en tecnologías web modernas",
+      "author": {
+        "@type": "Person",
+        "name": "Milder Yaniv Carreón Chambi"
+      },
+      "inLanguage": "es-PE",
+      "copyrightYear": "2025",
+      "genre": "Portfolio Profesional"
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Servicios de Desarrollo FullStack",
+      "description": "Desarrollo de aplicaciones web, sistemas de gestión, e-commerce y soluciones tecnológicas personalizadas",
+      "provider": {
+        "@type": "Person",
+        "name": "Milder Yaniv Carreón Chambi"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Perú"
+      },
+      "serviceType": [
+        "Desarrollo Frontend",
+        "Desarrollo Backend",
+        "Desarrollo FullStack",
+        "Sistemas de Gestión",
+        "E-commerce",
+        "Aplicaciones Web"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "description": "Desarrollo de software y aplicaciones web",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  </script>
+
   <Portafolio />
 </Layout>
